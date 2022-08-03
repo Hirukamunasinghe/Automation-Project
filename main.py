@@ -14,7 +14,7 @@ SEARCH="Let Her Go"
 
 #Creating a class
 class Bot:
-    def __init__(self,driver_path,driver_service):
+    def __init__(self,driver_service,driver_path):
         self.driver_service = Service(executable_path=driver_path)
         self.driver = webdriver.Chrome(service=driver_service)
 
@@ -34,7 +34,7 @@ class Bot:
         song.click()
 
 #Creating the objects and calling the functions
-bot = Bot(DRIVER_PATH,DRIVER_SERVICE)
+bot = Bot(DRIVER_SERVICE,DRIVER_PATH)
 bot.search_bar()
 bot.song()
 
